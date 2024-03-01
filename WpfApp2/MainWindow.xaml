@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="19*"/>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="43*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200px"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="Код учета"/>
+        <TextBox Grid.Column="1" x:Name="BookIdBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" />
+
+        <Label Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Название"/>
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="NameBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+
+        <Label Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Авторы"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="AuthorBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+
+        <Label Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Количество страниц"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="PagesBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+
+        <Label Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Тематика"/>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="GenreBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+
+        <TextBlock Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="4" ></TextBlock>
+        <Button Grid.Row="8" Click="ButtonBase_OnClick" x:Name="CreateButton" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">Создать</Button>
+
+        <Label Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Изменить код учета"/>
+        <TextBox Grid.Row="9" Grid.Column="1" x:Name="NewBookIdBox" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100"/>
+        <Button Grid.Row="9" Grid.Column="2" Click="BookIdChangeButton_OnClick" x:Name="BookIdChangeButton" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" Margin="0,10,0,0">Изменить</Button>
+        <Label Content="Состояние" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center"/>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Center" x:Name="comboBoxState" Grid.Row="5" VerticalAlignment="Center" Width="120" />
+        <Label Content="Изменить состояние" HorizontalAlignment="Left" Grid.Row="10" VerticalAlignment="Center" Width="133" Margin="40,0,0,0"/>
+        <ComboBox Grid.Column="1" HorizontalAlignment="Center" x:Name="comboBoxChangedState" Margin="0,12,0,0" Grid.Row="10" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
+        <Button Grid.Column="2" Content="Изменить" x:Name="ButtonChangeState" HorizontalAlignment="Center" Grid.Row="10" VerticalAlignment="Center" Width="150" Click="ButtonChangeState_Click"/>
+        <TextBlock Grid.Column="3" HorizontalAlignment="Left" Grid.Row="2" x:Name="BookInformation" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="276" Grid.ColumnSpan="2" Height="63" Margin="0,33,0,0" Grid.RowSpan="3"/>
+    </Grid>
+</Window>
